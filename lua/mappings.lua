@@ -1,6 +1,8 @@
 require "nvchad.mappings"
 local M = {}
 
+local map = vim.keymap.set
+map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 M.dap = {
   plugin = true,
   n = {
@@ -25,41 +27,35 @@ M.dap_python = {
   }
 }
 
-M.general = {
-  t = {
-    ["<C-h>"] = {
+map("t", "<C-h>", 
       function()
         vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)
         vim.cmd("wincmd h")
       end,
-      "Window left"
-    },
-    ["<C-j>"] = {
+  {desc = "Window left"}
+)
+map("t", "<C-l>", 
       function()
         vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)
         vim.cmd("wincmd j")
       end,
-      "Window down"
-    },
-    ["<C-k>"] = {
+  {desc = "Window right"}
+)
+map("t", "<C-j>", 
+      function()
+        vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)
+        vim.cmd("wincmd j")
+      end,
+  {desc = "Window down"}
+)
+map("t", "<C-k>", 
       function()
         vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)
         vim.cmd("wincmd k")
       end,
-      "Window up"
-    },
-    ["<C-l>"] = {
-      function()
-        vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)
-        vim.cmd("wincmd l")
-      end,
-      "Window right"
-    },
-    ["<C-p>"] = {
-      "<Up> <CR>",
-      "Window right"
-    },
-  },
+  {desc = "Window up"}
+)
+M.general = {
   n = {
     ["<leader>sh"] = {
       function()
