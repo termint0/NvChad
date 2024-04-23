@@ -2,6 +2,7 @@ require "nvchad.mappings"
 local M = {}
 
 local map = vim.keymap.set
+vim.cmd("map <C-t> <Nop>")
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 M.dap = {
   plugin = true,

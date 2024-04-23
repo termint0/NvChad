@@ -1,5 +1,14 @@
 local plugins = {
   { "nvim-neotest/nvim-nio" },
+  { 
+    'f3fora/nvim-texlabconfig',
+    config = function()
+        require('texlabconfig').setup(config)
+    end,
+    -- ft = { 'tex', 'bib' }, -- Lazy-load on filetype
+    build = 'go build'
+    -- build = 'go build -o ~/.bin/' if e.g. ~/.bin/ is in $PATH
+},
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
@@ -68,6 +77,7 @@ local plugins = {
     opts = {
       ensure_installed = {
         "clang-format",
+        "standardjs",
         "clangd",
         "codelldb",
         "black",
@@ -75,6 +85,8 @@ local plugins = {
         "mypy",
         "ruff",
         "pyright",
+        "texlab",
+"typescript-language-server"
       }
     }
   }

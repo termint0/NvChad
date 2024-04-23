@@ -16,6 +16,9 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
+lspconfig.texlab.setup {}
+lspconfig.tsserver.setup {}
+
 lspconfig.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
