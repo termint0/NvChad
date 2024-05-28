@@ -29,6 +29,12 @@ local plugins = {
     end
   },
   {
+    'tzachar/local-highlight.nvim',
+    config = function()
+      require('local-highlight').setup()
+    end,
+  },
+  {
     "jay-babu/mason-nvim-dap.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -53,8 +59,7 @@ local plugins = {
     end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "VeryLazy",
+    "nvimtools/none-ls.nvim",
     opts = function()
       return require "configs.null-ls"
     end,

@@ -2,6 +2,7 @@ require "nvchad.mappings"
 local M = {}
 
 local map = vim.keymap.set
+local telescope_builtin = require('telescope.builtin')
 vim.cmd("map <C-t> <Nop>")
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 M.dap = {
@@ -28,6 +29,13 @@ M.dap_python = {
   }
 }
 
+map(
+  "n",
+  '<leader>fd',
+  telescope_builtin.lsp_document_symbols,
+  {desc = "Find in document symbols"}
+)
+
 map("t", "<C-h>", 
       function()
         vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)
@@ -35,6 +43,7 @@ map("t", "<C-h>",
       end,
   {desc = "Window left"}
 )
+
 map("t", "<C-l>", 
       function()
         vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)
