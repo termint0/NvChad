@@ -4,7 +4,9 @@ local M = {}
 local map = vim.keymap.set
 local telescope_builtin = require('telescope.builtin')
 vim.cmd("map <C-t> <Nop>")
+vim.cmd("map K <Nop>")
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
+map("n", "K", vim.lsp.buf.hover, { desc = "Terminal Escape terminal mode" })
 M.dap = {
   plugin = true,
   n = {

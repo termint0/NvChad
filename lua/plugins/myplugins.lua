@@ -30,6 +30,7 @@ local plugins = {
   },
   {
     'tzachar/local-highlight.nvim',
+    event = "VeryLazy",
     config = function()
       require('local-highlight').setup()
     end,
@@ -60,6 +61,7 @@ local plugins = {
   },
   {
     "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
     opts = function()
       return require "configs.null-ls"
     end,
@@ -89,6 +91,7 @@ local plugins = {
         "debugpy",
         "mypy",
         "ruff",
+        "ruff-lsp",
         "pyright",
         "texlab",
 "typescript-language-server"
