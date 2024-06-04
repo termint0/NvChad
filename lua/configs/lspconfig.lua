@@ -17,7 +17,11 @@ lspconfig.clangd.setup {
 }
 
 lspconfig.texlab.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.tsserver.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"javascript"},
+}
 
 lspconfig.pyright.setup({
   on_attach = on_attach,
@@ -28,4 +32,9 @@ lspconfig.ruff_lsp.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {"python"},
+})
+lspconfig.cssls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"css"},
 })

@@ -5,6 +5,15 @@ local map = vim.keymap.set
 local telescope_builtin = require('telescope.builtin')
 vim.cmd("map <C-t> <Nop>")
 vim.cmd("map K <Nop>")
+
+map("n", "<space>e", vim.diagnostic.open_float, bufopts)
+
+local wrap_format = function(foo, buffnr)
+  return function()
+    foo({buffnr = buffnr})
+  end
+end
+map("n", "<space>v", wrap_format(vim.lsp.buf.format, buffnr), {desc = "Format current buffer"} )
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 map("n", "K", vim.lsp.buf.hover, { desc = "Terminal Escape terminal mode" })
 M.dap = {

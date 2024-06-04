@@ -86,6 +86,7 @@ local plugins = {
         "clang-format",
         "standardjs",
         "clangd",
+        "css-lsp",
         "codelldb",
         "black",
         "debugpy",
@@ -94,7 +95,7 @@ local plugins = {
         "ruff-lsp",
         "pyright",
         "texlab",
-"typescript-language-server"
+      "typescript-language-server"
       }
     }
   }
